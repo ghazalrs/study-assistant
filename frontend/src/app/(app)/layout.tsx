@@ -11,7 +11,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
           <SidebarTrigger />
         </header>
         <TooltipProvider>
-          <div className="flex-1 p-6">{children}</div>
+          <div className="flex flex-1 flex-col overflow-hidden">{children}</div>
         </TooltipProvider>
       </main>
     </SidebarProvider>
