@@ -139,7 +139,7 @@ export default function ChatPage() {
               placeholder="Send a message…"
               disabled={loading}
               rows={1}
-              className="flex-1 resize-none border-0 bg-transparent p-0 shadow-none focus-visible:ring-0 text-sm min-h-[1.5rem] max-h-40"
+              className="flex-1 resize-none border-0 bg-transparent dark:bg-transparent p-0 shadow-none focus-visible:ring-0 text-sm min-h-[1.5rem] max-h-40"
             />
             <Button
               size="icon"
