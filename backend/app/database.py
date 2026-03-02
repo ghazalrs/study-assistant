@@ -1,11 +1,12 @@
+import os
 from typing import Annotated
 from fastapi import Depends
 from sqlmodel import Session, create_engine
+from dotenv import load_dotenv
 
+load_dotenv()
 
-DATABASE_URL = "postgresql://postgres:password@localhost:5432/studyassistant"
-
-engine = create_engine(DATABASE_URL)
+engine = create_engine(os.environ["DATABASE_URL"])
 
 
 def get_session():
