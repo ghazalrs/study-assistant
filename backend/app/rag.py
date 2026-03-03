@@ -5,6 +5,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_postgres import PGVector
 from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
+from langsmith import traceable
 
 load_dotenv()
 
@@ -35,6 +36,7 @@ def _get_vector_store(course_id: int) -> PGVector:
     )
 
 
+@traceable
 def ingest_document(file_path: str, metadata: dict) -> int:
     """Load a PDF, split into chunks, embed, and store in PGVector. Returns chunk count."""
     docs = PyPDFLoader(file_path).load()
@@ -50,6 +52,7 @@ def ingest_document(file_path: str, metadata: dict) -> int:
     return len(chunks)
 
 
+@traceable
 def query_rag(question: str, course_id: int) -> dict:
     """Retrieve relevant chunks and generate an answer with citations."""
     docs = _get_vector_store(course_id).similarity_search(question, k=5)
