@@ -1,7 +1,6 @@
 from pydantic import BaseModel
 
-class RAGQuery(BaseModel):
-    course_id: int
+class Query(BaseModel):
     question: str
 
 class Citation(BaseModel):
@@ -9,6 +8,6 @@ class Citation(BaseModel):
     page: int
     chunk_id: str
 
-class RAGResponse(BaseModel):
+class Response(BaseModel):
     answer: str
     citations: list[Citation]
