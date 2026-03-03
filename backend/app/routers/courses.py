@@ -28,3 +28,5 @@ async def delete_course(course_id: int, session: SessionDep):
     session.delete(course)
     session.commit()
     return {"ok": True}
+
+
