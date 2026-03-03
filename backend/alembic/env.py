@@ -10,7 +10,7 @@ from alembic import context
 
 from app.models.user import User
 from app.models.course import Course
-from app.models.file import File
+from backend.app.models.files import File
 from app.models.chunk import Chunk
 from app.models.chat import ChatSession, Message
 from app.models.calendar_event import CalendarEvent

@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from sqlmodel import select
 from app.database import SessionDep
 from ..schemas.file import PresignRequest, PresignResponse, FileCompleteRequest
-from ..models.file import File
+from ..models.files import File
 
 router = APIRouter()
 
