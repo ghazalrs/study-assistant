@@ -1,10 +1,11 @@
 from fastapi import FastAPI
 from sqlmodel import SQLModel
-from .routers import chat, courses, files, email, calendar
+from .routers import auth, chat, courses, files, email, calendar
 from .database import engine
 
 app = FastAPI()
 
+app.include_router(auth.router)
 app.include_router(courses.router)
 app.include_router(files.router)
 app.include_router(chat.router)
